@@ -1,6 +1,6 @@
 import style from './NavBar.module.css'; // Import your CSS module
 import { useNavigate } from 'react-router-dom'
-import Logo from '../assets/logo.png'
+import Logo from '../assets/logo/logo.png'
 
 const NavBar = () => {
   const navigate = useNavigate();

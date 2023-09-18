@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './SelectWalletContainer.module.css';
 import { GoDotFill } from 'react-icons/go';
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo/logo.png';
 import SupportedData from '../../components/Home/SupportedData';
 import WalletConnect from './WalletConnect';
 
