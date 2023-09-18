@@ -5,7 +5,6 @@ import ErrorConnecting from './pages/ErrorConnecting'
 import SelectWallet from './pages/SelectWallet'
 import WalletError from './pages/wallet-error'
 
-// Function to load page from top
 const ScrollToTop = () => {
   const location = useLocation();
   useEffect(() => {

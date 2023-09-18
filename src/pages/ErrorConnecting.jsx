@@ -2,7 +2,7 @@ import React from 'react'
 
 const ErrorConnecting = () => {
   return (
-    <div>ErrorCoasdnnecting</div>
+    <div>Page not found</div>
   )
 }
 
