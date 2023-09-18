@@ -1,0 +1,37 @@
+.section {
+    background: var(--grey);
+    padding: 70px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.heading {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+.button {
+    padding: 16px 32px;
+    font-size: 18px;
+    background: transparent;
+    color: white;
+    border-radius: 8px;
+    transition: .4s ease-in-out;
+    border: 1px solid white;
+    cursor: black;
+    cursor: pointer;
+}
+.button:hover {
+    background: white;
+    color: black;
+}
+@media screen and (max-width: 600px) {
+    .heading {
+        font-size: 24px;
+    }
+    .button {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,73 @@
+.navigation-header {
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: white;
+}
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.wallet-logo {
+    width: 40px;
+}
+
+.wallet-connect {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.connect-button {
+    padding: 10px 32px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 8px;
+    color: white;
+    border: 1px solid var(--blue);
+    background: var(--blue);
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+.connect-button:hover {
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    background: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+@media screen and (max-width: 600px) {
+    .wallet-connect {
+        font-size: 18px;
+    }
+    .wallet-logo {
+        width: 32px;
+    }
+    .connect-button {
+        padding: 8px 16px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .wallet-connect {
+        font-size: 17px;
+    }
+    .wallet-logo {
+        width: 30px;
+    }
+    .connect-button {
+        padding: 7px 14px;
+    }
+}

@@ -1,0 +1,40 @@
+.getStartedSection {
+    background: var(--grey);
+    padding: 50px 20px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.getStartedContainer {
+    width: 100%;
+    max-width: var(--max-width);
+    border-radius: 8px;
+}
+.getStartedHeading {
+    color: white;
+    text-align: center;
+}
+.getStartedArticle {
+    margin-top: 20px;
+    padding: 40px;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+.getStarted > span {
+    font-weight: 700;
+    color: var(--blue);
+}
+
+@media screen and (max-width: 760px) {
+    .getStartedHeading {
+        font-size: 24px;
+        
+    }
+    .getStartedArticle {
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

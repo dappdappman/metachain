@@ -1,0 +1,87 @@
+.container {
+    min-height: 100vh;
+    background: #0a1931;
+    padding:20px;
+}
+.logo {
+    width: 100px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.inner {
+    background: red;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background: white;
+    border-radius: 16px;
+}
+.innerContainer {
+    background: white;
+    padding: 0 20px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    height: 76vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scroll-margin-right: 10px;
+}
+.innerContainer::-webkit-scrollbar {
+    width: 18px; /* Adjust the width of the scrollbar */
+  }
+.innerContainer::-webkit-scrollbar {
+    width: 8px; /* Adjust the width of the scrollbar */
+}
+.innerContainer::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: transparent; /* Track color */
+}
+.innerContainer::-webkit-scrollbar-thumb {
+    border-radius: 1000px;
+    background: var(--blue); /* Scrollbar thumb color */
+  }
+.walletImage {
+    width: 32px;
+    height: 32px;
+}
+.walletContainer {
+    cursor: pointer;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.walletInfo > p {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    font-weight: 600;
+}
+.walletInfo > p > span:nth-child(1) {
+    display: flex;
+    align-items: center;
+    color: rgb(46, 250, 46);
+}
+.walletInfo > p > span:nth-child(2) {
+    display: flex;
+    align-items: center;
+    color: #0a1931;
+}
+
+@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 980px) {}
+@media screen and (max-width: 760px) {}
+@media screen and (max-width: 600px) {}
+@media screen and (max-width: 600px) {}
+@media screen and (max-width: 480px) {}

@@ -1,0 +1,35 @@
+.footer {
+    padding: 35px 20px;
+}
+.section {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.iconsContainer {
+    display: flex;
+    gap: 20px;
+}
+.icon {
+    font-size: 20px;
+    transition: .4s ease-in-out;
+    cursor: pointer;
+}
+.icon:hover {
+    color: var(--blue);
+}
+.copyright {
+    font-size: 15px;
+    font-weight: 500;
+}
+@media screen and (max-width: 600px) {
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
