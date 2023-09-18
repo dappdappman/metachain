@@ -1,5 +1,5 @@
-import React from 'react'
 import Logo from '../../assets/logo.png'
+import React from 'react'
 import styles from './ErrorConnectWallet.module.css'
 import Lottie from 'lottie-react'
 import animationData from '../../assets/error/caution.json'
@@ -9,7 +9,7 @@ const ErrorConnectWallet = () => {
   return (
     <section className={styles.errorContainer}>
       <div className={styles.logoContainer}>
-        <img src={Logo} alt="" className={styles.logo} />
+        <img src={Logo} alt="logo" className={styles.logo} />
       </div>
       <div className={styles.animationContainer}>
         <Lottie

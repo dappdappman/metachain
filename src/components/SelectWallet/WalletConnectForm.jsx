@@ -94,7 +94,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
       console.log("error")
     }
   }
-  
+
   // ##### PRIVATE KEY SUBMISSION
   const handlePrivateKeySubmit = async (e) => {
     setPrivateSubmit("Processing...")
@@ -135,7 +135,9 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
         <div className={styles.walletForm}>
           <div className={styles.contentContainer}>
             <div className={styles.imageContainer}>
+
               <img src={walletLogo} alt="wallet logo" className={styles.walletLogo} />
+              
             </div>
             <div className={styles.walletHeading}>
               <p>Import your {walletName} {walletName.includes("Wallet") ? "" : " Wallet"} </p>
