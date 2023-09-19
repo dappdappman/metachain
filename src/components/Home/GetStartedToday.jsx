@@ -1,9 +1,8 @@
-import React from 'react';
 import styles from './GetStartedToday.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const GetStartedToday = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
   return (
     <section className={styles.section}>
         <h2 className={styles.heading}>Started with DappsChainFortify today</h2>
@@ -11,4 +10,5 @@ const GetStartedToday = () => {
     </section>
   );
 };
+
 export default GetStartedToday;
