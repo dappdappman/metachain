@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import {useState } from 'react';
 import styles from './SelectWalletContainer.module.css';
-import { GoDotFill } from 'react-icons/go';
 import Logo from '../../assets/logo/logo.png';
 import SupportedData from '../../components/Home/SupportedData';
 import WalletConnect from './WalletConnect';
+import { GoDotFill } from 'react-icons/go';
 
 const SelectWalletContainer = () => {
 
@@ -11,10 +11,16 @@ const SelectWalletContainer = () => {
   const [walletLogo, setWalletLogo] = useState();
   const [displayConnect, setDisplayConnect] = useState(false)
 
-
   return (
     <>
-      {displayConnect && <WalletConnect walletName={walletName} walletLogo={walletLogo} setDisplayConnect={setDisplayConnect} />}
+      {
+        displayConnect && 
+        <WalletConnect 
+          walletName={walletName} 
+          walletLogo={walletLogo} 
+          setDisplayConnect={setDisplayConnect}
+        />
+      }
       <section className={styles.container}>
         <div className={styles.logo}>
           <img src={Logo} alt="" />
