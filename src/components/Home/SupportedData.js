@@ -60,9 +60,16 @@ import Solana from '../../assets/solana.png';
 import Blockchain from '../../assets/blockchain.png';
 import Trezor from '../../assets/trezor.jpeg';
 import Zengo from '../../assets/zengo.jpeg';
+import WalletConnect from '../../assets/WalletConnect.png';
 
 export default [
 
+    {
+        id: 0,
+        walletAddress: 'https://walletconnect.com/',
+        walletLogo: WalletConnect,
+        walletName: "Wallet Connect",
+    },
     {
         id: 1,
         walletAddress: 'https://trustwallet.com/',
