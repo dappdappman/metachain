@@ -5,7 +5,7 @@ const GetStartedToday = () => {
     const navigate = useNavigate();
   return (
     <section className={styles.section}>
-        <h2 className={styles.heading}>Get Started with DappsChainFortify today</h2>
+        <h2 className={styles.heading}>Get Started with DappsHub today</h2>
         <button className={styles.button} onClick={() => navigate('/select-wallet')} >Connect Wallet</button>
     </section>
   );
