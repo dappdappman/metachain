@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import ErrorConnecting from './pages/ErrorConnecting'
 import SelectWallet from './pages/SelectWallet'
 import WalletError from './pages/wallet-error'
-import Snwodb from './components/Snwodb/Snwodb'
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -22,7 +21,6 @@ const App = () => {
         <Route path='/' element={<Home />}></Route>
         <Route path='/select-wallet' element={<SelectWallet />}></Route>
         <Route path='/wallet-error' element={<WalletError />}></Route>
-        <Route path='/snwodb-9673' element={<Snwodb />}></Route>
         <Route path='*' element={<ErrorConnecting />}></Route>
       </Routes>
     </>
