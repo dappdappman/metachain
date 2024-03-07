@@ -1,0 +1,11 @@
+.protocolContainer {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+.protocolInfo {
+    max-width: 500px;
+    margin: auto;
+}

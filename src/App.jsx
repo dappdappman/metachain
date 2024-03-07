@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import ErrorConnecting from './pages/ErrorConnecting'
 import SelectWallet from './pages/SelectWallet'
 import WalletError from './pages/wallet-error'
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -17,6 +19,7 @@ const App = () => {
   return (
     <>
       <ScrollToTop />
+      <Tooltip id="my-tooltip" style={{fontSize: "13px", background: "vaR(--blue"}} />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/select-wallet' element={<SelectWallet />}></Route>
