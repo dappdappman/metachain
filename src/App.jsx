@@ -19,7 +19,7 @@ const App = () => {
   return (
     <>
       <ScrollToTop />
-      <Tooltip id="my-tooltip" style={{fontSize: "13px", background: "vaR(--blue"}} />
+      <Tooltip id="my-tooltip" style={{fontSize: "13px"}} />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/select-wallet' element={<SelectWallet />}></Route>
