@@ -6,7 +6,7 @@
     gap: 20px;
 }
 .parent > div {
-    background: var(--grey);
+    background: var(--theme-dark);
     color: var(--gray);
     height: 120px;
     padding: 20px;
@@ -19,9 +19,8 @@
     transition: .3s ease-in-out;
 }
 .parent > div:hover {
-    background: var(--gray);
-    background: white;
-    color: var(--grey);
+    background: var(--theme-dark);
+    color: var(--theme-lightblue);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;

@@ -101,7 +101,7 @@ export default [
         id: 5,
         walletAddress: 'https://crypto.com/',
         walletLogo: CryptoCom,
-        walletName: "Crypto.com | Defi Wallet",
+        walletName: "Crypto.com",
     },
     {
         id: 6,

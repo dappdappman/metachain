@@ -2,10 +2,15 @@
     width: 100%;
     max-width: var(--max-width);
     margin: auto;
-    padding: 50px 20px;
+    padding: 40px 20px;
     text-align: center;
+}
+.protocolTitle {
+    color: var(--theme-light);
+    margin-bottom: 10px;
 }
 .protocolInfo {
     max-width: 500px;
     margin: auto;
+    color: var(--theme-dimLight);
 }

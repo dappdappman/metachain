@@ -10,6 +10,19 @@
     --grae: #7c7c7c;
 }
 
+:root {
+    --theme-purple: #A077F9;
+    --theme-lightblue: #6628F7;
+    --theme-dimwhite: #87868C;
+    --theme-light: #EFEFED;
+    --theme-dimLight: #87868C;
+    --theme-dark: #161525;
+    --theme-darkBlack:#131314;
+    --theme-darkBg: #05040C;
+    --max-width: 1500px;
+    --transition: .3s ease-in-out;
+  }
+
 *, body {
     padding: 0;
     margin: 0;
@@ -17,7 +30,7 @@
 }
 
 body {
-    background: white;
+    background: var(--theme-darkBg);
     padding: 0;
     margin: 0;
     box-sizing: border-box;

@@ -8,55 +8,65 @@
     text-align: center;
     font-size: 36px;
     margin-bottom: 20px;
+    color: var(--theme-light);
 }
 .wallet-support-text {
     text-align: center;
     margin: auto;
     width: 100%;
     max-width: 512px;
+    color: var(--theme-dimLight);
 }
 .wallet-link {
     font-weight: 600;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 8px;
-    width: 130px;
+    width: 140px;
+    height: 140px;
     transition: .3s ease-in-out;
     text-align: center;
+    background: var(--theme-dark);
+    border-radius: 10px;
+    color: var(--theme-dimLight);
+    font-size: 13px;
 }
 .wallet-link:hover .wallet-logo {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .wallet-link:hover .wallet-text {
-    color: var(--blue);
+    color: var(--theme-lightblue);
 }
 .wallet-logo {
-    transition: .3s ease-in-out;
     width: 80px;
     height: 80px;
     border-radius: 200px;
     overflow: hidden;
-}
-.wallet-text {
-    transition: .3s ease-in-out;
 }
 .wallet-container {
     width: 100%;
     max-width: 800px;
     margin: auto;
     margin-top: 70px;
-    row-gap: 50px;
-    column-gap: 30px;
+    gap: 20px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
 }
-
-@media screen and (max-width: 1200px) {}
-@media screen and (max-width: 980px) {}
-@media screen and (max-width: 760px) {}
-@media screen and (max-width: 600px) {}
-@media screen and (max-width: 600px) {}
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 600px) {
+    .wallet-logo  {
+        width: 50px;
+        height: 50px;
+    }
+    .wallet-link {
+        width: 115px;
+        height: 115px
+    }   
+    .walletInfo > p {
+        font-weight: 500;
+        font-size: 13px;
+    }
+}

@@ -6,20 +6,48 @@
     width: 100%;
     max-width: var(--max-width);
     margin: auto;
-    padding: 180px 20px 40px 20px;
+    padding: 130px 20px 0px 20px;
 }
 .heroArticle {
     width: 100%;
-    max-width: 616px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
 }
 .heroImage {
     width: 100%;
     max-width: 600px;
 }
 .heroTitle {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     line-height: 70px;
     font-weight: 800;
+    color: var(--theme-light);
+}
+.heroDescription {
+    color: var(--theme-light);
+    opacity: .8;
+    margin-bottom: 30px;
+}
+.connect-button {
+    padding: 14px 20px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 8px;
+    color: var(--theme-light);
+    border: 1px solid var(--theme-lightblue);
+    background: var(--theme-lightblue);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.connect-button:hover {
+    color: var(--theme-light);
+    border: 1px solid var(--theme-purple);
+    background: var(--theme-purple);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+.connect-button:active {
+    scale: .97;
 }
 
 @media screen and (max-width: 1200px) {}

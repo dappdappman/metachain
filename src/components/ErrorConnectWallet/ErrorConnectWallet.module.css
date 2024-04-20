@@ -1,7 +1,8 @@
 .errorContainer {
     min-height: 100vh;
     background: #0a1931;
-    padding:20px;
+    background: var(--theme-dark);
+    padding:80px 20px;
     text-align: center;
 }
 .logo {
@@ -22,10 +23,10 @@
 }
 .errorHeading {
     font-size: 36px;
-    color: white;
+    color: var(--theme-light);
 }
 .errorMessage {
-    color: var(--gray);
+    color: var(--theme-dimLight);
     font-size: 18px;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -34,20 +35,17 @@
     display: block;
     width: fit-content;
     margin: auto;
-    padding: 10px 32px;
+    padding: 10px 42px;
     outline: none;
     font-size: 18px;
     border-radius: 8px;
-    color: white;
-    border: 1px solid var(--blue);
-    background: var(--blue);
+    color: var(--theme-light);
+    background: var(--theme-lightblue);
     cursor: pointer;
     transition: .4s ease-in-out;
 }
 .errorReturnButton:hover {
-    color: var(--blue);
-    border: 1px solid white;
-    background: white;
+    background: var(--theme-purple);
     cursor: pointer;
     transition: .4s ease-in-out;
 }

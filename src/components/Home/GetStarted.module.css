@@ -1,5 +1,6 @@
 .getStartedSection {
-    background: var(--grey);
+    margin-top: 50px;
+    background: var(--theme-dark);
     padding: 50px 20px ;
     display: flex;
     justify-content: center;
@@ -11,20 +12,28 @@
     border-radius: 8px;
 }
 .getStartedHeading {
-    color: white;
+    color: var(--theme-light);
     text-align: center;
 }
 .getStartedArticle {
     margin-top: 20px;
     padding: 40px;
-    background: white;
     display: flex;
     justify-content: space-around;
     gap: 40px;
 }
-.getStarted > span {
+.getStarted {
+    background: var(--theme-lightblue);
+    padding: 40px;
+    border-radius: 20px;
+    color: var(--theme-light);
+    display: flex;
+    gap: 40px;
+}
+.getStarted span {
     font-weight: 700;
-    color: var(--blue);
+    font-size: 90px;
+    color: var(--);
 }
 
 @media screen and (max-width: 760px) {

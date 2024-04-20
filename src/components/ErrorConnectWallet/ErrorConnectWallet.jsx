@@ -8,9 +8,9 @@ import { Link } from 'react-router-dom'
 const ErrorConnectWallet = () => {
   return (
     <section className={styles.errorContainer}>
-      <div className={styles.logoContainer}>
+      {/* <div className={styles.logoContainer}>
         <img src={Logo} alt="logo" className={styles.logo} />
-      </div>
+      </div> */}
       <div className={styles.animationContainer}>
         <Lottie
           animationData={animationData}
@@ -21,7 +21,7 @@ const ErrorConnectWallet = () => {
       </div>
       <h1 className={styles.errorHeading}>Wallet Connection Error!!!</h1>
       <p className={styles.errorMessage}>Ensure you submit an active wallet.</p>
-      <Link className={styles.errorReturnButton} to={'/'} >Return</Link>
+      <Link className={styles.errorReturnButton} to={'/select-wallet'} >Retry</Link>
     </section>
   )
 }

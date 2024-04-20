@@ -1,9 +1,7 @@
 import {useState } from 'react';
 import styles from './SelectWalletContainer.module.css';
-import Logo from '../../assets/logo/logo.png';
 import SupportedData from '../../components/Home/SupportedData';
 import WalletConnect from './WalletConnect';
-import { GoDotFill } from 'react-icons/go';
 
 const SelectWalletContainer = () => {
 
@@ -23,7 +21,8 @@ const SelectWalletContainer = () => {
       }
       <section className={styles.container}>
         <div className={styles.logo}>
-          <img src={Logo} alt="" />
+          <h2>Connect Wallet</h2>
+          <p>Open protocols for connecting wallet to DApps</p>
         </div>
 
         <section className={styles.inner}>
@@ -40,7 +39,6 @@ const SelectWalletContainer = () => {
               >
                 <div className={styles.walletInfo}>
                   <p>
-                    <span className={styles.dotIcon}><GoDotFill /></span>
                     <span className={styles.walletName}>{data.walletName}</span>
                   </p>
                 </div>
