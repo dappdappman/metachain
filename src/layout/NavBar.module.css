@@ -4,8 +4,8 @@
     position: fixed;
     top: 0;
     background: var(--theme-darkBg);
+    z-index: 10;
 }
-
 .navigation {
     display: flex;
     align-items: center;
@@ -15,7 +15,6 @@
     margin: auto;
     padding: 20px;
 }
-
 .logo {
     display: flex;
     gap: 10px;
@@ -23,11 +22,9 @@
     width: fit-content;
     cursor: pointer;
 }
-
 .wallet-logo {
     width: 40px;
 }
-
 .wallet-connect {
     font-weight: 700;
     font-size: 24px;
@@ -35,7 +32,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .connect-button {
     padding: 14px 20px;
     outline: none;
