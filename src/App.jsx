@@ -6,6 +6,7 @@ import SelectWallet from './pages/SelectWallet'
 import WalletError from './pages/wallet-error'
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
+import { Analytics } from "@vercel/analytics/react"
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -18,6 +19,7 @@ const ScrollToTop = () => {
 const App = () => {
   return (
     <>
+      <Analytics/>
       <ScrollToTop />
       <Tooltip id="my-tooltip" style={{fontSize: "13px"}} />
       <Routes>
