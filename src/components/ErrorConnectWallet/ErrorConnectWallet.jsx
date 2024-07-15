@@ -8,9 +8,6 @@ import { Link } from 'react-router-dom'
 const ErrorConnectWallet = () => {
   return (
     <section className={styles.errorContainer}>
-      {/* <div className={styles.logoContainer}>
-        <img src={Logo} alt="logo" className={styles.logo} />
-      </div> */}
       <div className={styles.animationContainer}>
         <Lottie
           animationData={animationData}

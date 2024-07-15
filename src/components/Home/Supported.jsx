@@ -6,7 +6,7 @@ const Supported = () => {
   return (
     <section className={style["wallet-support"]}>
         <h2 className={style["wallet-support-heading"]}>Supported Wallets</h2>
-        <p className={style["wallet-support-text"]}>DappsHub enables seamless integration of your wallet with an extensive collection of applications, unlocking a multitude of web3 opportunities.</p>
+        <p className={style["wallet-support-text"]}>DappsPortal enables seamless integration of your wallet with an extensive collection of applications, unlocking a multitude of web3 opportunities.</p>
         <section className={style["wallet-container"]}>
             {
                 SupportedData.map(data => (

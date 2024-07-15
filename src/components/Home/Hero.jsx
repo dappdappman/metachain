@@ -9,7 +9,7 @@ const Hero = () => {
     <section className={style["heroSection"]}>
       <article className={style["heroArticle"]}>
         <h1 className={style["heroTitle"]}>Integrate mobile wallets with your DApps</h1>
-        <p className={style["heroDescription"]}>DappsHub is a blockchain-based protocol that enables users to link their mobile crypto wallets to DApps. 
+        <p className={style["heroDescription"]}>DappsPortal is a blockchain-based protocol that enables users to link their mobile crypto wallets to DApps. 
         {/* This supports secure connections and interactions within the web3 ecosystem. */}
         </p>
         <button

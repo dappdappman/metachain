@@ -9,7 +9,7 @@ const NavBar = () => {
       <nav className={style["navigation"]}>
         <div className={style["logo"]}>
           {/* <img src={Logo} alt="DappsHub" className={style["wallet-logo"]}  /> */}
-          <span className={style["wallet-connect"]}>DappsHub</span>
+          <span className={style["wallet-connect"]}>DappsPortal</span>
         </div>
         <div className={style["button-container"]}>
           <button
