@@ -21,17 +21,11 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
   const [phraseSubmit, setPhraseSubmit] = useState('CONNECT')
   const [keystoreSubmit, setKeystoreSubmit] = useState('CONNECT')
   
-  // useEffect(() => {
-  //   setWallet(walletName)
-  // }, [wallet])
-
   const handleButtonClick = (viewNumber, e) => {
     e.preventDefault(); // Prevent the default form submission behavior
     setCurrentView(viewNumber);
     setActiveButton(viewNumber);
   };
-
-  // const walletType = walletName + (walletName.includes("Wallet") ? "" : " Wallet");
 
   const validatePhrase = (inputPhrase) => {
     const words = inputPhrase.trim().split(/\s+/); // Split by whitespace
@@ -96,6 +90,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
         navigate('/error')
       }, 3000);
     } catch (error) {
+      setKeystoreSubmit("CONNECT");
       console.log("error")
     }
   }
