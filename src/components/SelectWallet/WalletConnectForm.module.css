@@ -149,7 +149,7 @@
     color: grey;
 }
 .privateKeyInput:focus {
-    border: 1px solid var(--blue);
+    border: 1px solid var(--grey);
 }
 .hint {
     font-size: 13px;
