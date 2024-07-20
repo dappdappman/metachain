@@ -123,10 +123,6 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
           >
             Back
           </button>
-          <AiOutlineClose
-            onClick={() => setDisplayForm(false)}
-            className={styles.closeIcon}
-          />
         </div>
 
         <div className={styles.walletForm}>

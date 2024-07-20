@@ -21,9 +21,10 @@
     font-size: 20px;
     transition: .4s ease-in-out;
     cursor: pointer;
+    color: var(--theme-lightblue);
 }
 .icon:hover {
-    color: var(--theme-lightblue);
+    color: var(--theme-light);
 }
 .copyright {
     font-size: 15px;

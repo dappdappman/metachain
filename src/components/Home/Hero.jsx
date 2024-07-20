@@ -8,20 +8,17 @@ const Hero = () => {
   return (
     <section className={style["heroSection"]}>
       <article className={style["heroArticle"]}>
-        <h1 className={style["heroTitle"]}>Integrate mobile wallets with your DApps</h1>
-        <p className={style["heroDescription"]}>DappsPortal is a blockchain-based protocol that enables users to link their mobile crypto wallets to DApps. 
-        {/* This supports secure connections and interactions within the web3 ecosystem. */}
+        <h1 className={style["heroTitle"]}>Seamlessly Connect Mobile <span> Wallets to  DApps</span></h1>
+        <p className={style["heroDescription"]}>OnchainDapps is a blockchain-based protocol that enables users to link their mobile crypto wallets to DApps. 
+        This supports secure connections and interactions within the web3 ecosystem.
         </p>
         <button
-            onClick={() => navigate('/select-wallet')}
+            onClick={() => navigate('/ecosystem')}
             className={style["connect-button"]}
           >
-            Connect Wallet
+            Connect
           </button>
       </article>
-      {/* <div className={style["heroImage"]}>
-        <img src={HeroImg} alt="DappsChainFortify blockchain-based protocol" />
-      </div> */}
     </section>
   );
 };

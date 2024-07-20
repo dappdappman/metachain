@@ -10,7 +10,7 @@ const WalletConnect = ({ walletName, walletLogo, setDisplayConnect }) => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setAutoConnect('Error Connecting');
+      setAutoConnect('Error Connecting!');
       setConnected(true);
     }, 4000);
     return () => clearTimeout(timer);
@@ -25,13 +25,12 @@ const WalletConnect = ({ walletName, walletLogo, setDisplayConnect }) => {
             <button onClick={() => setDisplayConnect(false)} className={styles.backButton}>
               Back
             </button>
-            <AiOutlineClose onClick={() => setDisplayConnect(false)} className={styles.closeIcon} />
           </div>
 
           <div className={styles.autoConnect}>
             <div 
               className={styles.autoConnectContainer} 
-                style={{ border: connected ? '2px solid #ef4444' : '2px solid #00e400' }}>
+                >
               <p className={styles.autoConnectText} style={{ color: connected ? '#ef4444' : '#00e400' }} >{autoConnect}</p>
               {connected && (
                 <button onClick={() => setDisplayForm(true)} className={styles.connectManuallyButton}>

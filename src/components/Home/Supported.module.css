@@ -10,6 +10,13 @@
     margin-bottom: 20px;
     color: var(--theme-light);
 }
+.wallet-support-heading > span {
+    background: linear-gradient(45deg, #083270, #13f287, #5ca0de);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
 .wallet-support-text {
     text-align: center;
     margin: auto;

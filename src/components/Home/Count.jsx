@@ -19,7 +19,7 @@ const Count = () => {
         <p className={style["count-value"]}>
           <VisibilitySensor onChange={onVisibilityChange}>
               <CountUp end={isVisible ? 1265480 : 0} duration={10} />
-          </VisibilitySensor>
+          </VisibilitySensor><span className={style["count-plus"]}>+</span>
         </p>
         <p className={style["count-label"]}>Per day</p>
       </div>
@@ -28,7 +28,7 @@ const Count = () => {
         <p className={style["count-value"]}>
           <VisibilitySensor onChange={onVisibilityChange}>
               <CountUp end={isVisible ? 967981 : 0} duration={10} />
-          </VisibilitySensor>
+          </VisibilitySensor><span className={style["count-plus"]}>+</span>
         </p>
         <p className={style["count-label"]}>Currently</p>
       </div>
@@ -37,7 +37,7 @@ const Count = () => {
         <p className={style["count-value"]}>
           <VisibilitySensor onChange={onVisibilityChange}>
               <CountUp end={isVisible ? 37759 : 0} duration={10} />
-          </VisibilitySensor>
+          </VisibilitySensor><span className={style["count-plus"]}>+</span>
         </p>
         <p className={style["count-label"]}>Per second</p>
       </div>

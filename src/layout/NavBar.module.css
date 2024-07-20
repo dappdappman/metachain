@@ -28,26 +28,23 @@
 .wallet-connect {
     font-weight: 700;
     font-size: 24px;
-    background: -webkit-linear-gradient(right, var(--theme-purple), var(--theme-lightblue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--gray);
 }
 .connect-button {
-    padding: 14px 20px;
+    padding: 14px 40px;
     outline: none;
     font-size: 16px;
     border-radius: 8px;
-    color: var(--theme-light);
-    border: 1px solid var(--theme-lightblue);
-    background: var(--theme-lightblue);
     cursor: pointer;
+    transition: .3s ease-in-out;
+    font-weight: 500;
+    color: var(--theme-light);
+    border: 1px ridge #13f287;
+    background: none;
     transition: .3s ease-in-out;
 }
 .connect-button:hover {
-    color: var(--theme-light);
-    border: 1px solid var(--theme-purple);
-    background: var(--theme-purple);
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    border: 1px ridge #00924b;
 }
 .connect-button:active {
     scale: .97;

@@ -11,16 +11,31 @@
     font-size: 30px;
     color: var(--theme-light);
 }
-.button {
-    padding: 16px 32px;
-    font-size: 18px;
-    background: var(--theme-lightblue);
-    color: var(--theme-light);
-    border: none;
+.heading > span {
+    background: linear-gradient(45deg, #083270, #13f287, #5ca0de);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.connect-button {
+    padding: 14px 40px;
+    outline: none;
+    font-size: 16px;
     border-radius: 8px;
-    transition: .4s ease-in-out;
-    cursor: black;
     cursor: pointer;
+    transition: .3s ease-in-out;
+    font-weight: 500;
+    color: var(--theme-light);
+    border: 1px ridge #13f287;
+    background: none;
+    transition: .3s ease-in-out;
+}
+.connect-button:hover {
+    border: 1px ridge #00924b;
+}
+.connect-button:active {
+    scale: .97;
 }
 @media screen and (max-width: 600px) {
     .heading {

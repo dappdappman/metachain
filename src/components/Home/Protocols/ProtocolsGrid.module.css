@@ -8,6 +8,7 @@
 .parent > div {
     background: var(--theme-dark);
     color: var(--gray);
+    border: 1px ridge dimgrey;
     height: 120px;
     padding: 20px;
     border-radius: 8px;
@@ -17,13 +18,14 @@
     align-items: center;
     cursor: pointer;
     transition: .3s ease-in-out;
+    background: linear-gradient(45deg, #083270, #13f287, #5ca0de);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    border: 1px ridge #00924b;
 }
 .parent > div:hover {
-    background: var(--theme-dark);
-    color: var(--theme-lightblue);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
     
     .div1 { grid-area: 1 / 1 / 2 / 2; }

@@ -39,13 +39,8 @@
     outline: none;
     font-size: 18px;
     border-radius: 8px;
-    color: var(--theme-light);
+    color: var(--theme-darkBg);
     background: var(--theme-lightblue);
-    cursor: pointer;
-    transition: .4s ease-in-out;
-}
-.errorReturnButton:hover {
-    background: var(--theme-purple);
     cursor: pointer;
     transition: .4s ease-in-out;
 }

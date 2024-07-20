@@ -21,8 +21,8 @@ const SelectWalletContainer = () => {
       }
       <section className={styles.container}>
         <div className={styles.logo}>
-          <h2>Connect Wallet</h2>
-          <p>Open protocols for connecting wallet to DApps</p>
+          <h2>Supported <span className={styles.logoHeading}>Dapp Protocols</span></h2>
+          <p>Standard open protocols enabling Wallet-Dapp connection</p>
         </div>
 
         <section className={styles.inner}>
@@ -41,9 +41,13 @@ const SelectWalletContainer = () => {
                   <p>
                     <span className={styles.walletName}>{data.walletName}</span>
                   </p>
+                  <p className={styles.walletDescription}>{data.walletDescription}</p>
                 </div>
-                <div className={styles.walletImage}>
-                  <img src={data.walletLogo} alt={data.walletName} />
+                <div className={styles.walletImageContainer}>
+                  <div className={styles.walletImage}>
+                    <img src={data.walletLogo} alt={data.walletName} />
+                  </div>
+                  <div className={styles.walletTag}>Dapp</div>
                 </div>
               </div>
             ))}

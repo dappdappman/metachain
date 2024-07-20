@@ -5,7 +5,7 @@ import SupportedData from './SupportedData';
 const Supported = () => {
   return (
     <section className={style["wallet-support"]}>
-        <h2 className={style["wallet-support-heading"]}>Supported Wallets</h2>
+        <h2 className={style["wallet-support-heading"]}>Supported <span>Wallets</span></h2>
         <p className={style["wallet-support-text"]}>DappsPortal enables seamless integration of your wallet with an extensive collection of applications, unlocking a multitude of web3 opportunities.</p>
         <section className={style["wallet-container"]}>
             {

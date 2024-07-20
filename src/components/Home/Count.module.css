@@ -12,6 +12,9 @@
 .count-container {
     width: 100%;
     max-width: 180px;
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
 }
 .count-title {
     margin-bottom: 10px;
@@ -19,13 +22,16 @@
 }
 .count-value {
     font-size: 36px;
-    color: var(--theme-lightblue);
+    color: var(--theme-light);
     font-weight: 500;
 }
 .count-label {
     font-size: 14px;
     color: var(--theme-dimLight);
     display: none;
+}
+.count-plus {
+    color: #13f287;
 }
 
 @media screen and (max-width: 1027px) {

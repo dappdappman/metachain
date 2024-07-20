@@ -1,6 +1,6 @@
 import style from './NavBar.module.css'; // Import your CSS module
 import { useNavigate } from 'react-router-dom'
-// import Logo from '../assets/logo/logo.png'
+import Logo from '../assets/logo/new-logo.png';
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -8,15 +8,15 @@ const NavBar = () => {
     <header className={style["navigation-header"]}>
       <nav className={style["navigation"]}>
         <div className={style["logo"]}>
-          {/* <img src={Logo} alt="DappsHub" className={style["wallet-logo"]}  /> */}
-          <span className={style["wallet-connect"]}>DappsPortal</span>
+          <img src={Logo} alt="DappsHub" className={style["wallet-logo"]}  />
+          <span className={style["wallet-connect"]}>OnchainDapps</span>
         </div>
         <div className={style["button-container"]}>
           <button
-            onClick={() => navigate('/select-wallet')}
+            onClick={() => navigate('/ecosystem')}
             className={style["connect-button"]}
           >
-            Connect Wallet
+            Connect
           </button>
         </div>
       </nav>
