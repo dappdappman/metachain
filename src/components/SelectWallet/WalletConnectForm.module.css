@@ -146,6 +146,7 @@
     font-size: 15px;
     outline: none;
     width: 100%;
+    color: grey;
 }
 .privateKeyInput:focus {
     border: 1px solid var(--blue);
