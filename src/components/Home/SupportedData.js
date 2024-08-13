@@ -63,6 +63,9 @@ import Zengo from '../../assets/zengo.jpeg';
 import WalletConnect from '../../assets/WalletConnect.png';
 import LeapWallet from '../../assets/leap-wallet.jpeg';
 import Keplr from '../../assets/keplr.png';
+import Tonkeeper from '../../assets/tonkeeper.jpeg';
+import Solfare from '../../assets/solfare.png';
+import Phantom from '../../assets/phantom.jpeg';
 
 export default [
     {
@@ -178,6 +181,13 @@ export default [
         walletDescription: "Popular mobile wallet for Ethereum and ERC20 tokens."
     },
     {
+        id: 15.5,
+        walletAddress: 'https://tonkeeper.com/',
+        walletLogo: Tonkeeper,
+        walletName: "Tonkeeper",
+        walletDescription: "Tonkeeper is your very personal wallet. Receive, buy and spend crypto."
+    },
+    {
         id: 16,
         walletAddress: 'https://pillarproject.io/',
         walletLogo: Pillar,
@@ -185,11 +195,25 @@ export default [
         walletDescription: "User-centric wallet with a focus on privacy and control."
     },
     {
+        id: 16.5,
+        walletAddress: 'https://solflare.com/',
+        walletLogo: Solfare,
+        walletName: "Solflare",
+        walletDescription: "Solflare is the safest way to start exploring Solana."
+    },
+    {
         id: 17,
         walletAddress: 'https://gnosis-safe.io/',
         walletLogo: Gnosis,
         walletName: "Gnosis Safe Multisig",
         walletDescription: "Multisig wallet for secure management of crypto assets."
+    },
+    {
+        id: 17.5,
+        walletAddress: 'https://phantom.app/',
+        walletLogo: Phantom,
+        walletName: "Phantom",
+        walletDescription: "The crypto wallet that will take you places."
     },
     {
         id: 18,
