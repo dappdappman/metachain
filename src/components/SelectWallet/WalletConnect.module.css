@@ -19,7 +19,7 @@
     width: 100%;
     max-width: 450px;
     padding-bottom: 25px;
-    background: var(--theme-darkBg);
+    background: white;
     border-radius: 16px;
     overflow: hidden;
 }
@@ -29,16 +29,18 @@
     align-items: center;
     padding: 20px;
     background: var(--theme-dark);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .backButton {
-    padding: 10px;
+    padding: 5px 10px;
     outline: none;
-    border: 2px solid var(--grae);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border: 1 px solid var(--grae);
     cursor: pointer;
-    border-radius: 8px;
-    color: var(--grae);
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.5);
     background: none;
-    font-size: 15px;
+    font-size: 25px;
 }
 
 .autoConnect {
@@ -58,9 +60,8 @@
     outline: none;
     cursor: pointer;
     border-radius: 8px;
-    color: var(--theme-lightblue);
-    background: none;
-    border: 1px ridge var(--theme-lightblue);
+    color: white;
+    background: #0079FF;
     font-size: 15px;
 }
 .autoConnectText {

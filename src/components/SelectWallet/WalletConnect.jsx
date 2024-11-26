@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
+import { IoArrowBackOutline } from "react-icons/io5";
 import WalletConnectForm from './WalletConnectForm';
 import styles from './WalletConnect.module.css';
 
@@ -23,7 +23,7 @@ const WalletConnect = ({ walletName, walletLogo, setDisplayConnect }) => {
         <section className={styles.innerSection}>
           <div className={styles.buttonContainer}>
             <button onClick={() => setDisplayConnect(false)} className={styles.backButton}>
-              Back
+            <IoArrowBackOutline />
             </button>
           </div>
 

@@ -4,7 +4,11 @@
     position: fixed;
     top: 0;
     background: var(--theme-darkBg);
+    /* background: red; */
     z-index: 10;
+    box-shadow: -1px 7px 5px 0px rgba(0,0,0,0.55);
+-webkit-box-shadow: -1px 7px 5px 0px rgba(0,0,0,0.55);
+-moz-box-shadow: -1px 7px 5px 0px rgba(0,0,0,0.55);
 }
 .navigation {
     display: flex;
@@ -38,9 +42,9 @@
     cursor: pointer;
     transition: .3s ease-in-out;
     font-weight: 500;
-    color: var(--theme-light);
-    border: 1px ridge #13f287;
-    background: none;
+    color: #13f287;
+    border: 2px ridge #13f287;
+    background: transparent;
     transition: .3s ease-in-out;
 }
 .connect-button:hover {

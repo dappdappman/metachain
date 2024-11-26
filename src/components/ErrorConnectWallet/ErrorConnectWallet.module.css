@@ -1,7 +1,7 @@
 .errorContainer {
     min-height: 100vh;
     background: #0a1931;
-    background: var(--theme-dark);
+    background: white;
     padding:80px 20px;
     text-align: center;
 }
@@ -23,10 +23,16 @@
 }
 .errorHeading {
     font-size: 36px;
-    color: var(--theme-light);
+    color: #0a1931;
+}
+.errorSubheading {
+    font-size: 28px;
+    font-weight: 500;
+    color: #0a1931;
 }
 .errorMessage {
-    color: var(--theme-dimLight);
+    font-weight: 500;
+    color: #0a1931;
     font-size: 18px;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -39,8 +45,8 @@
     outline: none;
     font-size: 18px;
     border-radius: 8px;
-    color: var(--theme-darkBg);
-    background: var(--theme-lightblue);
+    color: white;
+    background: #0079FF;
     cursor: pointer;
     transition: .4s ease-in-out;
 }

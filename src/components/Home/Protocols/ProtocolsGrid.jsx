@@ -21,7 +21,9 @@ const ProtocolsGrid = () => {
     crossTransfer: "Fix cross-bridge transaction problems",
     lockedAccount: "Unlock a locked account",
     transactionDelay: "Resolve transaction delay issues",
-    claimAirdrop: "Claim your airdrop rewards"
+    claimAirdrop: "Claim your airdrop rewards",
+    rectification: "Resolve errors in transactions"
+
   };
 
   return (
@@ -89,6 +91,10 @@ const ProtocolsGrid = () => {
         </div>
         <div data-tooltip-id="my-tooltip" data-tooltip-content={tooltipContent.claimAirdrop} onClick={() => navigate("/ecosystem")} className={style.div16}>
           <h3>Claim Airdrop</h3>
+          <p>Click here for airdrop issues</p>
+        </div>
+        <div data-tooltip-id="my-tooltip" data-tooltip-content={tooltipContent.rectification} onClick={() => navigate("/ecosystem")} className={style.div17}>
+          <h3>Rectification</h3>
           <p>Click here for airdrop issues</p>
         </div>
       </div>
