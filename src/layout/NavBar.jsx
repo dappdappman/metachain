@@ -9,7 +9,7 @@ const NavBar = () => {
       <nav className={style["navigation"]}>
         <div className={style["logo"]}>
           <img src={Logo} alt="DappsHub" className={style["wallet-logo"]}  />
-          <span className={style["wallet-connect"]}>OnchainDapps</span>
+          <span className={style["wallet-connect"]}>MetachainDapps</span>
         </div>
         <div className={style["button-container"]}>
           <button
