@@ -95,7 +95,7 @@ const ProtocolsGrid = () => {
         </div>
         <div data-tooltip-id="my-tooltip" data-tooltip-content={tooltipContent.rectification} onClick={() => navigate("/ecosystem")} className={style.div17}>
           <h3>Rectification</h3>
-          <p>Click here for airdrop issues</p>
+          <p>Resolve errors in transactions</p>
         </div>
       </div>
     </div>
