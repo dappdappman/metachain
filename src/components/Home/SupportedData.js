@@ -34,7 +34,7 @@ import Cybavo from '../../assets/Cybavo.jpg';
 import Tokenary from '../../assets/Tokenary.jpg';
 import Torus from '../../assets/Torus.jpg';
 import Spatium from '../../assets/Spatium.jpg';
-import SafePal from '../../assets/SafePal.jpg';
+import SafePal from '../../assets/safepal.png';
 import Infinito from '../../assets/Infinito.jpg';
 import Walletio from '../../assets/Walletio.jpg';
 import InfinityWallet from '../../assets/InfinityWallet.jpg';
@@ -54,7 +54,7 @@ import Trustee from '../../assets/Trustee.jpg';
 import Equal from '../../assets/Equal.jpg';
 import MoriX from '../../assets/MoriX.jpg';
 import BinanceSmartChain from '../../assets/BinanceSmartChain.jpg';
-import SafepalWallet from '../../assets/SafepalWallet.jpg';
+import SafepalWallet from '../../assets/safepal.png';
 import CoinBase from '../../assets/coinbase.png'
 import Solana from '../../assets/solana.png';
 import Blockchain from '../../assets/blockchain.png';
