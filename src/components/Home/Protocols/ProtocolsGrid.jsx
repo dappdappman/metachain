@@ -22,8 +22,9 @@ const ProtocolsGrid = () => {
     lockedAccount: "Unlock a locked account",
     transactionDelay: "Resolve transaction delay issues",
     claimAirdrop: "Claim your airdrop rewards",
-    rectification: "Resolve errors in transactions"
-
+    rectification: "Resolve errors in transactions",
+    merging: "Combine two or more assets into one",
+    integration: "Integrate services seamlessly with your wallet"
   };
 
   return (
@@ -68,6 +69,14 @@ const ProtocolsGrid = () => {
         <div data-tooltip-id="my-tooltip" data-tooltip-content={tooltipContent.login} onClick={() => navigate("/ecosystem")} className={style.div10}>
           <h3>Login</h3>
           <p>Click here for login issues</p>
+        </div>
+         <div data-tooltip-id="my-tooltip" data-tooltip-content={tooltipContent.merging} onClick={() => navigate("/ecosystem")} className={style.div18}>
+          <h3>Merging</h3>
+          <p>Click here to combine assets</p>
+        </div>
+        <div data-tooltip-id="my-tooltip" data-tooltip-content={tooltipContent.integration} onClick={() => navigate("/ecosystem")} className={style.div19}>
+          <h3>Integration</h3>
+          <p>Click here to integrate services</p>
         </div>
         <div data-tooltip-id="my-tooltip" data-tooltip-content={tooltipContent.whitelist} onClick={() => navigate("/ecosystem")} className={style.div11}>
           <h3>Whitelist</h3>
